@@ -1,7 +1,7 @@
 // 🔹 General Header Styling
 .site-header {
   display: flex;
-  justify-content: space-between; /* Keeps logo/title on the left and menu on the right */
+  justify-content: flex-start; /* Aligns everything to the left */
   align-items: center;
   padding: 10px;
   width: 100%;
@@ -14,27 +14,20 @@
   gap: 20px; /* Adds spacing between logo and title */
 }
 
-.branding a {
-  text-decoration: none;
-  color: inherit;
-  font-weight: bold;
-  font-size: 1.5em;
-}
-
-// 🔹 Navbar Styles
+// 🔹 Navbar Fix - Moves Menu to the Left
 nav {
   display: flex;
   align-items: center;
   flex-grow: 1; /* Ensures it takes up remaining space */
-  justify-content: flex-end; /* Push menu to the right */
+  justify-content: flex-start; /* Moves menu close to the logo/title */
 }
 
 nav ul {
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-start; /* Aligns menu to the left */
   list-style: none;
   padding: 0;
-  margin-left: auto; /* Ensures it stays to the right */
+  margin-left: 20px; /* Adds spacing between title and menu */
 }
 
 nav ul li {
@@ -66,112 +59,4 @@ nav ul li:last-child {
     justify-content: center;
     margin-left: 0;
   }
-}
-
-// 🔹 Padding Adjustments
-%padding-nav {
-  padding: $padding-small $padding-x-large;
-  @media (max-width: $xl-break) {
-    padding: $padding-small ($padding-large * 2);
-  }
-  @media (max-width: $l-break) {
-    padding: $padding-small $padding-large;
-  }
-  @media (max-width: $m-break) {
-    padding: $padding-small $padding-medium;
-  }
-  @media (max-width: $sm-break) {
-    padding: $padding-small $padding-x-small;
-  }
-}
-
-%padding-post {
-  padding: $padding-x-small $padding-x-large;
-  @media (max-width: $xl-break) {
-    padding: $padding-x-small ($padding-large * 2);
-  }
-  @media (max-width: $l-break) {
-    padding: $padding-x-small $padding-large;
-  }
-  @media (max-width: $m-break) {
-    padding: $padding-x-small $padding-medium;
-  }
-  @media (max-width: $sm-break) {
-    padding: $padding-x-small $padding-small;
-  }
-}
-
-%padding-header {
-  padding: $padding-medium $padding-large;
-  @media (min-width: $xl-break) {
-    padding: $padding-large $padding-large;
-  }
-  @media (max-width: $sm-break) {
-    padding: $padding-large;
-  }
-}
-
-// 🔹 Shadows & Effects
-.txt-shadow {
-  text-shadow: 0.07em 0.10em 0.15em var(--text-shadow);
-}
-
-.subtle-txt-shadow {
-  text-shadow: 1px 1px 2px var(--text-shadow);
-}
-
-// 🔹 Buttons Styling
-.button {
-  border-radius: 0.3em;
-  border: 1px solid;
-  display: inline-block;
-  margin: 1em 0;
-  padding: 0.5em 0.75em;
-}
-
-a.button {
-  @extend .button-link;
-}
-
-.button-link {
-  &:hover {
-    background: var(--link);
-    border: 1px solid var(--link);
-    color: var(--background);
-    text-decoration: none;
-    filter: none;
-  }
-}
-
-.body-link {
-  &:hover {
-    text-decoration: underline;
-    filter: brightness(0.85);
-  }
-}
-
-.post-link {
-  &:hover {
-    text-decoration: none;
-    color: var(--link);
-  }
-}
-
-// 🔹 States
-.disabled {
-  opacity: 0.7;
-}
-
-// 🔹 Custom Utility Classes
-.text-center {
-  text-align: center;
-}
-
-// 🔹 Fixing Alignment Issues
-.left {
-  float: left;
-}
-
-.right {
-  float: none; /* Remove right floating */
 }
