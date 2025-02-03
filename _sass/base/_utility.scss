@@ -1,62 +1,136 @@
-// 🔹 General Header Styling
-.site-header {
-  display: flex;
-  justify-content: flex-start; /* Aligns everything to the left */
-  align-items: center;
-  padding: 10px;
-  width: 100%;
+// Mix-ins
+%padding-nav {
+  padding: $padding-small $padding-x-large;
+  @media (max-width: $xl-break) {
+    padding: $padding-small ($padding-large * 2);
+  }
+  @media (max-width: $l-break) {
+    padding: $padding-small $padding-large;
+  }
+  @media (max-width: $m-break) {
+    padding: $padding-small $padding-medium;
+  }
+  @media (max-width: $sm-break) {
+    padding: $padding-small $padding-x-small;
+  }
 }
 
-// 🔹 Branding Section (Logo + Title)
-.branding {
-  display: flex;
-  align-items: center;
-  gap: 20px; /* Adds spacing between logo and title */
+%padding-post {
+  padding: $padding-x-small $padding-x-large;
+  @media (max-width: $xl-break) {
+    padding: $padding-x-small ($padding-large * 2);
+  }
+  @media (max-width: $l-break) {
+    padding: $padding-x-small $padding-large;
+  }
+  @media (max-width: $m-break) {
+    padding: $padding-x-small $padding-medium;
+  }
+  @media (max-width: $sm-break) {
+    padding: $padding-x-small $padding-small;
+  }
 }
 
-// 🔹 Navbar Fix - Moves Menu to the Left
+%padding-header {
+  padding: $padding-medium $padding-large;
+  @media (min-width: $xl-break) {
+    padding: $padding-large $padding-large;
+  }
+  @media (max-width: $sm-break) {
+    padding: $padding-large;
+  }
+}
+
+.txt-shadow {
+  text-shadow: 0.07em 0.10em 0.15em var(--text-shadow);
+}
+
+.subtle-txt-shadow {
+  text-shadow: 1px 1px 2px var(--text-shadow);
+}
+
+// Buttons
+.button {
+  border-radius: 0.3em;
+  border: 1px solid;
+  display: inline-block;
+  margin: 1em 0;
+  padding: 0.5em 0.75em;
+}
+
+a.button {
+  @extend .button-link;
+}
+
+.button-link {
+  &:hover {
+    background: var(--link);
+    border: 1px solid var(--link);
+    color: var(--background);
+    text-decoration: none;
+    filter: none;
+  }
+}
+
+.body-link {
+  &:hover {
+    text-decoration: underline;
+    filter: brightness(0.85);
+  }
+}
+
+.post-link {
+  &:hover {
+    text-decoration: none;
+    color: var(--link);
+  }
+}
+
+// States
+.disabled {
+  opacity: 0.7;
+}
+
+// Custom
+.text-center {
+  text-align: center;
+}
+
+// 🔹 Fix Navbar Alignment
 nav {
   display: flex;
+  justify-content: flex-start; /* Move navbar to the left */
   align-items: center;
-  flex-grow: 1; /* Ensures it takes up remaining space */
-  justify-content: flex-start; /* Moves menu close to the logo/title */
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
 }
 
 nav ul {
   display: flex;
-  justify-content: flex-start; /* Aligns menu to the left */
+  justify-content: flex-start; /* Align menu items to the left */
   list-style: none;
   padding: 0;
-  margin-left: 20px; /* Adds spacing between title and menu */
+  margin: 0;
 }
 
 nav ul li {
-  margin-right: 15px; /* Adjust spacing between menu items */
+  margin-right: 15px; /* Adjust spacing */
 }
 
 nav ul li:last-child {
   margin-right: 0;
 }
 
-// 🔹 Responsive Adjustments
-@media (max-width: 768px) {
-  .site-header {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .branding {
-    justify-content: center;
-    margin-bottom: 10px;
-  }
-  
-  nav {
-    justify-content: center;
-    width: 100%;
-  }
+// Remove right float and ensure left alignment
+.left {
+  float: left;
+}
 
-  nav ul {
-    justify-content: center;
-    margin-left: 0;
-  }
+.right {
+  float: none; /* Remove right floating */
 }
