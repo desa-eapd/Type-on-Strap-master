@@ -1,4 +1,74 @@
-// Mix-ins
+// 🔹 General Header Styling
+.site-header {
+  display: flex;
+  justify-content: space-between; /* Keeps logo/title on the left and menu on the right */
+  align-items: center;
+  padding: 10px;
+  width: 100%;
+}
+
+// 🔹 Branding Section (Logo + Title)
+.branding {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Adds spacing between logo and title */
+}
+
+.branding a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+// 🔹 Navbar Styles
+nav {
+  display: flex;
+  align-items: center;
+  flex-grow: 1; /* Ensures it takes up remaining space */
+  justify-content: flex-end; /* Push menu to the right */
+}
+
+nav ul {
+  display: flex;
+  justify-content: flex-start;
+  list-style: none;
+  padding: 0;
+  margin-left: auto; /* Ensures it stays to the right */
+}
+
+nav ul li {
+  margin-right: 15px; /* Adjust spacing between menu items */
+}
+
+nav ul li:last-child {
+  margin-right: 0;
+}
+
+// 🔹 Responsive Adjustments
+@media (max-width: 768px) {
+  .site-header {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .branding {
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  
+  nav {
+    justify-content: center;
+    width: 100%;
+  }
+
+  nav ul {
+    justify-content: center;
+    margin-left: 0;
+  }
+}
+
+// 🔹 Padding Adjustments
 %padding-nav {
   padding: $padding-small $padding-x-large;
   @media (max-width: $xl-break) {
@@ -41,6 +111,7 @@
   }
 }
 
+// 🔹 Shadows & Effects
 .txt-shadow {
   text-shadow: 0.07em 0.10em 0.15em var(--text-shadow);
 }
@@ -49,7 +120,7 @@
   text-shadow: 1px 1px 2px var(--text-shadow);
 }
 
-// Buttons
+// 🔹 Buttons Styling
 .button {
   border-radius: 0.3em;
   border: 1px solid;
@@ -86,47 +157,17 @@ a.button {
   }
 }
 
-// States
+// 🔹 States
 .disabled {
   opacity: 0.7;
 }
 
-// Custom
+// 🔹 Custom Utility Classes
 .text-center {
   text-align: center;
 }
 
-// 🔹 Fix Navbar Alignment
-nav {
-  display: flex;
-  justify-content: flex-start; /* Move navbar to the left */
-  align-items: center;
-}
-
-.site-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-}
-
-nav ul {
-  display: flex;
-  justify-content: flex-start; /* Align menu items to the left */
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-nav ul li {
-  margin-right: 15px; /* Adjust spacing */
-}
-
-nav ul li:last-child {
-  margin-right: 0;
-}
-
-// Remove right float and ensure left alignment
+// 🔹 Fixing Alignment Issues
 .left {
   float: left;
 }
