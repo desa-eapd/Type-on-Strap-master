@@ -115,7 +115,7 @@ nav {
 .branding {
   display: flex;
   align-items: center;
-  gap: 30px; /* Adds spacing between logo and title */
+  gap: 10px; /* Adds spacing between logo and title */
 }
 
 // 🔹 Navbar Styles
@@ -124,7 +124,7 @@ nav ul {
   justify-content: flex-start; /* Keep menu aligned to the left */
   list-style: none;
   padding: 0;
-  margin-left: 20px; /* Adds spacing between title and menu */
+  margin-left: 50px; /* Adds spacing between title and menu */
 }
 
 nav ul li {
