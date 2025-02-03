@@ -96,6 +96,41 @@ a.button {
   text-align: center;
 }
 
+// 🔹 Fix Navbar Alignment
+nav {
+  display: flex;
+  justify-content: flex-start; /* Move navbar to the left */
+  align-items: center;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+nav ul {
+  display: flex;
+  justify-content: flex-start; /* Align menu items to the left */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  margin-right: 15px; /* Adjust spacing */
+}
+
+nav ul li:last-child {
+  margin-right: 0;
+}
+
+// Remove right float and ensure left alignment
+.left {
+  float: left;
+}
+
 .right {
-  float: right;
+  float: none; /* Remove right floating */
 }
