@@ -97,19 +97,20 @@ a.button {
 }
 
 // 🔹 Fix Navbar Alignment & Add Space Between Logo and Menu
-// 🔹 Fix Navbar Alignment & Add Space Between Logo and Menu
 nav {
   display: flex;
-  justify-content: flex-start; /* Keep navbar to the left */
+  justify-content: center; /* Center the navbar horizontally */
   align-items: center; /* Vertically align navbar items */
-  margin-left: 0; /* Ensure no additional space between navbar and title */
+  width: 100%; /* Ensure the navbar takes the full width of the page */
+  padding: 0 20px; /* Optional: add horizontal padding to prevent the navbar from touching the edges */
 }
-
 .site-header {
   display: flex;
-  justify-content: space-between; /* Push logo and navbar apart */
-  align-items: center;
-
+  justify-content: center; /* Center the logo and navbar together */
+  align-items: center; /* Vertically align items */
+  width: 100%;
+  padding: 10px;
+}
 
 // 🔹 Branding Section (Logo + Title)
 .branding {
