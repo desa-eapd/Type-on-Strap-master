@@ -101,12 +101,12 @@ nav {
   display: flex;
   justify-content: flex-start; /* Keep navbar to the left */
   align-items: center;
-  margin-left: 30px; /* Adds space between title and menu */
+  margin-left: 0; /* Removed additional space between the navbar and the title */
 }
 
 .site-header {
   display: flex;
-  justify-content: flex-start; /* Ensure everything is aligned to the left */
+  justify-content: space-between; /* Ensures proper spacing between logo/title and menu */
   align-items: center;
   padding: 10px;
 }
@@ -115,7 +115,7 @@ nav {
 .branding {
   display: flex;
   align-items: center;
-  gap: 10px; /* Adds spacing between logo and title */
+  gap: 15px; /* Increased space between logo and title for better alignment */
 }
 
 // 🔹 Navbar Styles
@@ -124,11 +124,11 @@ nav ul {
   justify-content: flex-start; /* Keep menu aligned to the left */
   list-style: none;
   padding: 0;
-  margin-left: 50px; /* Adds spacing between title and menu */
+  margin-left: 0; /* Removed extra space to align with the branding section */
 }
 
 nav ul li {
-  margin-right: 15px; /* Adjust spacing between menu items */
+  margin-right: 20px; /* Increased spacing between menu items */
 }
 
 nav ul li:last-child {
@@ -141,5 +141,5 @@ nav ul li:last-child {
 }
 
 .right {
-  float: none; /* Remove right floating */
+  float: none; /* Ensure no floating behavior */
 }
