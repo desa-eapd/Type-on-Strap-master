@@ -103,44 +103,55 @@ nav {
   align-items: center; /* Vertically align navbar items */
   width: 100%; /* Ensure the navbar takes the full width of the page */
   padding: 0 20px; /* Optional: add horizontal padding to prevent the navbar from touching the edges */
-}
+}// 🔹 Fix Navbar and Branding Alignment
 .site-header {
   display: flex;
-  justify-content: center; /* Center the logo and navbar together */
-  align-items: center; /* Vertically align items */
+  justify-content: space-between; /* Keep the logo/title and navbar apart */
+  align-items: center; /* Vertically align logo/title and navbar items */
   width: 100%;
   padding: 10px;
 }
 
-// 🔹 Branding Section (Logo + Title)
+// 🔹 Branding Section (Logo + Title + Project Info)
 .branding {
   display: flex;
   align-items: center;
-  gap: 15px; /* Increased space between logo and title for better alignment */
+  gap: 15px; /* Adds space between the logo and title */
+  flex-grow: 1; /* Ensures the branding section grows to take available space */
+}
+
+// 🔹 "A project by UNDESA" Text Alignment
+.project-info {
+  font-size: 1rem; /* Adjust size as needed */
+  color: #333; /* Adjust color as needed */
+  margin-left: 20px; /* Add some spacing to the left */
+  display: flex;
+  align-items: center; /* Vertically center it with the navbar */
 }
 
 // 🔹 Navbar Styles
+nav {
+  display: flex;
+  justify-content: center; /* Center the navbar horizontally */
+  align-items: center; /* Vertically align navbar items */
+  width: 100%;
+  padding: 0 20px; /* Optional: Horizontal padding */
+}
+
 nav ul {
   display: flex;
-  justify-content: flex-start; /* Keep menu aligned to the left */
+  justify-content: center; /* Center the menu items */
   list-style: none;
   padding: 0;
-  margin-left: 0; /* Removed extra space to align with the branding section */
+  margin-left: 0;
 }
 
 nav ul li {
-  margin-right: 20px; /* Increased spacing between menu items */
+  margin-right: 20px; /* Equal spacing between items */
+  display: flex;
+  align-items: center; /* Ensure text items align vertically */
 }
 
 nav ul li:last-child {
   margin-right: 0;
-}
-
-// Remove right float and ensure left alignment
-.left {
-  float: left;
-}
-
-.right {
-  float: none; /* Ensure no floating behavior */
 }
